@@ -1,4 +1,9 @@
 package com.trung.chat.chatapp.repository;
 
-public interface ConversationRepository {
+import com.trung.chat.chatapp.entity.Conversation;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface ConversationRepository extends JpaRepository<Conversation, UUID> {
 }
