@@ -3,13 +3,14 @@ package com.trung.chat.chatapp.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "messages")
 public class Message {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long messageId;
+    @GeneratedValue
+    private UUID messageId;
     @ManyToOne
     @JoinColumn(name = "conversation_id", nullable = false)
     private Conversation conversation;
@@ -26,11 +27,11 @@ public class Message {
         this.content = content;
     }
 
-    public Long getMessageId() {
+    public UUID getMessageId() {
         return messageId;
     }
 
-    public void setMessageId(Long messageId) {
+    public void setMessageId(UUID messageId) {
         this.messageId = messageId;
     }
 
