@@ -21,10 +21,13 @@ public class ConversationParticipant {
     public ConversationParticipant() {
     }
 
-    public ConversationParticipant(ConversationParticipantId id, User user, Conversation conversation) {
-        this.id = id;
+    public ConversationParticipant(User user, Conversation conversation) {
         this.user = user;
         this.conversation = conversation;
+        this.id = new ConversationParticipantId(
+                user.getUserId(),
+                conversation.getConversationId()
+        );
     }
 
     public ConversationParticipantId getId() {
