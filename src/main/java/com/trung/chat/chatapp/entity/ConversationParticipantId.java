@@ -17,6 +17,9 @@ public class ConversationParticipantId implements Serializable {
     @Column(name = "conversation_id")
     private UUID conversationId;
 
+    public ConversationParticipantId(UUID userId, UUID conversationId) {
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(userId, conversationId);
